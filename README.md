@@ -1,0 +1,2 @@
+# StorageExample
+Example in AngularJS
