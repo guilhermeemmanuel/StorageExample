@@ -1,0 +1,75 @@
+<html ng-app="storageExample">
+
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Storage Example</title>
+	
+	<script src="libs/angular.js" > </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="libs/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<script src="js/app.js" > </script>
+	<script src="js/controllers/contactCtrl.js" > </script>
+	
+</head>
+
+<body class="layout" ng-controller="contactCtrl">
+	
+		
+		
+		<div style="overflow: hidden;">
+			<h3 class="margin-top align-left" >Session Storage Example</h3>
+			<h5 class="margin-top2 align-left margin-left"> using AngularJS</h5>
+		
+		</div>
+			<hr style="margin-top: 10px">
+		<div class="block-group contact-form center">
+			<form class="form" name="contactForm">
+			
+				<div class="block margin-left margin-top margin-bottom">
+					<img src="contact.jpg" class="contact-image">
+				</div>
+				<div class="block margin-left margin-top margin-bottom">
+					<div>
+						<input class="form-control margin-top" ng-model="contact.name" type="text" placeholder="Full Name"> </input>
+					</div>
+					<div>
+						<input class="form-control margin-top" ng-model="contact.email" type="text" placeholder="Email Address"> </input>
+					</div>
+					<div>
+						<input class="form-control margin-top" ng-model="contact.phone" type="text" placeholder="Phone Number"> </input>
+					</div>
+				</div>
+				<div class="block-right margin-right margin-top margin-bottom">
+					<button class="btn btn-success save-button" ng-click="addContact(contact)"> Save</button>
+				</div>
+				
+			</form>
+		</div>
+		
+		<hr>
+
+		<table class="table table-striped">
+			<tr class="table-header">
+				<th> Nome</th>
+				<th> Email</th>
+				<th> Phone</th>
+			</tr>
+			
+			<tr ng-repeat=" contact in contacts">
+				<td> {{contact.name}}</td>
+				<td> {{contact.email}}</td>
+				<td> {{contact.phone}}</td>
+			</tr>
+		</table>
+
+	
+	
+        </div>
+</body>
+
+
+</html>
