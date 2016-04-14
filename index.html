@@ -72,20 +72,18 @@
 		
 		<hr>
 
-		<table class="table table-striped">
-			<tr class="table-header">
-				<th> Nome</th>
-				<th> Email</th>
-				<th> Phone</th>
-			</tr>
-			
-			<tr ng-repeat=" contact in contacts">
-				<td> {{contact.name}}</td>
-				<td> {{contact.email}}</td>
-				<td> {{contact.phone}}</td>
-			</tr>
-		</table>
-
+		<div class="container block-group">
+			<ul >
+				<li ng-repeat="contact in contacts"> 
+					<div class="block margin-left margin-top margin-bottom">
+						<img src="images/contact.jpg" class="contact-image">
+					</div>
+					<h5 class="margin-top2 margin-bottom2" > {{contact.name}} </h5>
+					<a class="margin-top2 margin-bottom2" href="mailto:{{contact.email}}?Subject=Hello%20again" target="_top">{{contact.email}}</a>
+					<h5 class="margin-top2 margin-bottom2"> {{contact.phone}} </h5>
+				</li>
+			</ul>
+		</div>
 	
 	
         </div>

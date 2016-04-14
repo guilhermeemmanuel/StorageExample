@@ -17,6 +17,7 @@
 	margin-top: 10px;
 	margin-bottom: auto;
 	border-style: ridge;
+	border-width: 1px;
 }
 .margin-left {
 	margin-left: 5px;
@@ -31,6 +32,9 @@
 	margin-top:15px;
 }
 .margin-bottom {
+	margin-bottom: 5px;
+}
+.margin-bottom2 {
 	margin-bottom: 5px;
 }
 .block{
@@ -59,3 +63,25 @@
 .align-left{
 	float:left;
 }
+
+
+.container {
+    width: 800px;
+	
+}
+.container ul {
+    padding: 2; 
+    margin: 0;
+    list-style-type: none;
+	
+}
+.container ul li {
+    width: 350px;
+    height: 130px;
+    float: left;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	border-style: ridge;
+	border-width: 1px;
+}
+
