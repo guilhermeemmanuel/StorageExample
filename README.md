@@ -2,6 +2,7 @@
 Example in AngularJS
 
 Pre-requisites
+Rename Repository to StorageExample
 
 Instructions to Run:
 
