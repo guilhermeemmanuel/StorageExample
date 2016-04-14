@@ -34,17 +34,37 @@
 				</div>
 				<div class="block margin-left margin-top margin-bottom">
 					<div>
-						<input class="form-control margin-top" ng-model="contact.name" type="text" placeholder="Full Name"> </input>
+						<input class="form-control margin-top" name="name" ng-model="contact.name" ng-required="true" type="text" placeholder="Full Name"> </input>
+						<div ng-show="contactForm.name.$error.required && contactForm.name.$dirty" class="alert alert-danger margin-top">
+							<span class="glyphicon glyphicon-exclamation-sign"> </span>
+							Nome is required
+						</div>
 					</div>
 					<div>
-						<input class="form-control margin-top" ng-model="contact.email" type="text" placeholder="Email Address"> </input>
+						<input class="form-control margin-top" name="email" ng-model="contact.email" ng-required="true" type="email" placeholder="Email Address"> </input>
+						<div ng-show="contactForm.email.$error.required && contactForm.email.$dirty" class="alert alert-danger margin-top">
+							<span class="glyphicon glyphicon-exclamation-sign"> </span>
+							Email is required
+						</div>
+						<div ng-show="contactForm.email.$error.email && contactForm.email.$dirty" class="alert alert-danger margin-top">
+							<span class="glyphicon glyphicon-exclamation-sign"> </span>
+							Email incorrect
+						</div>
 					</div>
 					<div>
-						<input class="form-control margin-top" ng-model="contact.phone" type="text" placeholder="Phone Number"> </input>
+						<input class="form-control margin-top" name="phone" ng-model="contact.phone" ng-required="true" type="text" ng-pattern="/^\(\d{3}\) \d{3}-\d{4}$/" placeholder="Phone Number"> </input>
+						<div ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty" class="alert alert-danger margin-top">
+							<span class="glyphicon glyphicon-exclamation-sign"> </span>
+							Phone is required
+						</div>
+						<div ng-show="contactForm.phone.$error.pattern && contactForm.phone.$dirty" class="alert alert-danger margin-top">
+							<span class="glyphicon glyphicon-exclamation-sign"> </span>
+							Valid Phone: (xxx) xxx-xxxx
+						</div>
 					</div>
 				</div>
 				<div class="block-right margin-right margin-top margin-bottom">
-					<button class="btn btn-success save-button" ng-click="addContact(contact)"> Save</button>
+					<button class="btn btn-success save-button" ng-click="addContact(contact)" ng-disabled="contactForm.$invalid"> Save</button>
 				</div>
 				
 			</form>
